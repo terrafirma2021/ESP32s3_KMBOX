@@ -7,6 +7,15 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 - **ESP-B (Bottom):** Handles USB Host mode for the mouse via the left USB C connector.
 - **ESP-A (Top):** Handles USB Device mode and replicates KMBOX B Pro commands via the right USB C connector.
 
+
+## Images
+
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Board1.jpg" width="80%">
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/case.jpg" width="80%">
+
+
 ## Boards Used
 
 - **YD-ESP32-S3 N16R8**
@@ -16,6 +25,7 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 
 - Soldering is required to link the 5V pads (next to the RGB smd) to pass 5V out of the 5V pin on the bottom ESP.
 - The USB_OTG pads under the board need to be soldered to enable OTG host mode on the bottom ESP.
+- 3D Printer for the case, Its very tight :)  (STL Included), printed on k1max with 0.6 bontech CHT 0 issues
 
 ## Connectivity
 
