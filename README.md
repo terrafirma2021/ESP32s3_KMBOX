@@ -7,6 +7,16 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 - **ESP-B (Bottom):** Handles USB Host mode for the mouse via the left USB C connector.
 - **ESP-A (Top):** Handles USB Device mode and replicates KMBOX B Pro commands via the right USB C connector.
 
+## notes:
+- ** Buttons, X,Y, wheel  may not match your mouse, enable debug in PIO and adjust the transfer buffer index in the EspUsbHost.cpp (Bottom ESP)
+
+        Void EspUsbHost::_onReceive(usb_transfer_t *transfer) {
+  
+        report.buttons = transfer->data_buffer[0];
+        report.x = (uint8_t)transfer->data_buffer[2];
+        report.y = (uint8_t)transfer->data_buffer[4];
+        report.wheel = (uint8_t)transfer->data_buffer[6];
+
 
 ## Images
 
@@ -41,9 +51,15 @@ The two ESP32-S3 dev kits communicate using UART, allowing seamless data transfe
 - **USB Host Mode (ESP-B):** This dev kit acts as a USB host for the mouse, managing data and sending commands to the other dev kit.
 - **USB Device Mode (ESP-A):** This dev kit handles device mode operations and replicates KMBOX B Pro commands through its right USB C connector.
 
+## Files included
+
+- Both Devkit board code
+- 3d Printed case
+- Py script to test the project
+
 ## Menu for Configuring Device Settings
 
-To open the configuration menu, send the command `menu` through the COM port. The current values will be displayed, and you can change any setting by typing its corresponding number in decimal. To save the changes and reboot the device with new values, type the save number.
+To open the configuration menu, send the command `menu` through the COM port (Top ESP) . The current values will be displayed, and you can change any setting by typing its corresponding number in decimal. To save the changes and reboot the device with new values, type the save number.
 
 **Note:** If all values are removed, the device will revert to default settings to avoid blank values.
 
