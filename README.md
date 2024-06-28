@@ -5,7 +5,8 @@
 This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on top of the other) to create a versatile USB Host and Device interface. The two dev kits communicate via UART, with specific roles assigned to each:
 
 - **ESP-B (Bottom):** Handles USB Host mode for the mouse via the left USB C connector.
-- **ESP-A (Top):** Handles USB Device mode and replicates KMBOX B Pro commands via the right USB C connector.
+- **ESP-A (Top):** Handles USB Device mode via the left USB C Connector.
+- **ESP-A (Top):** replicates KMBOX B Pro commands via the right USB C connector.
 
 ## notes:
 - ** Buttons, X,Y, wheel  may not match your mouse, enable debug in PIO and adjust the transfer buffer index in the EspUsbHost.cpp (Bottom ESP)
