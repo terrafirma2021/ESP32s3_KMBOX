@@ -84,7 +84,8 @@ To open the configuration menu, send the command `menu` through the COM port (Bo
 ### Example Timing Improvements
 
 - The time taken to process a command has been benchmarked, showing results such as:
-<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Board1.jpg" width="30%">
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Speed.JPG" width="30%">
+
 
 These results demonstrate the efficiency and speed improvements achieved with the new code.
 
