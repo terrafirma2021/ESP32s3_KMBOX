@@ -8,26 +8,23 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 - **ESP-A (Top):** Handles USB Device mode via the left USB C Connector.
 - **ESP-A (Top):** replicates KMBOX B Pro commands via the right USB C connector.
 
-## notes:
-- ** Buttons, X,Y, wheel  may not match your mouse, enable debug in PIO and adjust the transfer buffer index in the EspUsbHost.cpp (Bottom ESP)
+## Notes:
+- **Buttons, X, Y, wheel may not match your mouse, enable debug in PIO and adjust the transfer buffer index in the EspUsbHost.cpp (Bottom ESP)**
 
-        Void EspUsbHost::_onReceive(usb_transfer_t *transfer) {
-  
+    ```cpp
+    Void EspUsbHost::_onReceive(usb_transfer_t *transfer) {
         report.buttons = transfer->data_buffer[0];
         report.x = (uint8_t)transfer->data_buffer[2];
         report.y = (uint8_t)transfer->data_buffer[4];
         report.wheel = (uint8_t)transfer->data_buffer[6];
-
+    }
+    ```
 
 ## Images
 
-
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Board1.jpg" width="80%">
-
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/case.jpg" width="80%">
-
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Test_Script_Photo.JPG" width="80%">
-
 
 ## Boards Used
 
@@ -38,7 +35,7 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 
 - Soldering is required to link the 5V pads (next to the RGB smd) to pass 5V out of the 5V pin on the bottom ESP.
 - The USB_OTG pads under the board need to be soldered to enable OTG host mode on the bottom ESP.
-- 3D Printer for the case, Its very tight :)  (STL Included), printed on k1max with 0.6 bontech CHT 0 issues
+- 3D Printer for the case, Its very tight :) (STL Included), printed on k1max with 0.6 bontech CHT 0 issues.
 
 ## Connectivity
 
@@ -54,100 +51,43 @@ The two ESP32-S3 dev kits communicate using UART, allowing seamless data transfe
 - **USB Host Mode (ESP-B):** This dev kit acts as a USB host for the mouse, managing data and sending commands to the other dev kit.
 - **USB Device Mode (ESP-A):** This dev kit handles device mode operations and replicates KMBOX B Pro commands through its right USB C connector.
 
-## Files included
+## Files Included
 
 - Both Devkit board code
-- 3d Printed case
-- Py script to test the project
+- 3D Printed case
+- Python script to test the project
 
 ## Menu for Configuring Device Settings
 
-To open the configuration menu, send the command `menu` through the COM port (Top ESP) . The current values will be displayed, and you can change any setting by typing its corresponding number in decimal. To save the changes and reboot the device with new values, type the save number.
+To open the configuration menu, send the command `menu` through the COM port (Bottom ESP). The current values will be displayed, and you can change any setting by typing its corresponding number in decimal. To save the changes and reboot the device with new values, type the save number.
 
 **Note:** If all values are removed, the device will revert to default settings to avoid blank values.
 
-### Available Settings
+## Updates and Improvements in V2
 
-1. **VID:** Vendor ID
-2. **PID:** Product ID
-3. **USB Version:** USB version information
-4. **Firmware Version:** Current firmware version
-5. **Product Name:** Name of the product
-6. **Manufacturer Name:** Name of the manufacturer
-7. **Serial Number:** Serial number of the device
-8. **USB Power:** Power requirements of the USB
-9. **USB Attributes:** Attributes related to USB configuration
-10. **Descriptor4:** Additional descriptor information
-14. **Device Descriptor bLength:** Length of the device descriptor
-15. **Device Descriptor bDescriptorType:** Type of the device descriptor
-16. **Device Descriptor bcdUSB:** USB specification release number
-17. **Device Descriptor bDeviceClass:** Class code of the device
-18. **Device Descriptor bDeviceSubClass:** Subclass code of the device
-19. **Device Descriptor bDeviceProtocol:** Protocol code of the device
-20. **Device Descriptor bMaxPacketSize0:** Maximum packet size for endpoint zero
-21. **Device Descriptor idVendor:** Vendor ID of the device descriptor
-22. **Device Descriptor idProduct:** Product ID of the device descriptor
-23. **Device Descriptor bcdDevice:** Device release number
-24. **Device Descriptor iManufacturer:** Index of the manufacturer string descriptor
-25. **Device Descriptor iProduct:** Index of the product string descriptor
-26. **Device Descriptor iSerialNumber:** Index of the serial number string descriptor
-27. **Device Descriptor bNumConfigurations:** Number of possible configurations
-28. **Configuration Descriptor bLength:** Length of the configuration descriptor
-29. **Configuration Descriptor bDescriptorType:** Type of the configuration descriptor
-30. **Configuration Descriptor wTotalLength:** Total length of the configuration descriptor
-31. **Configuration Descriptor bNumInterfaces:** Number of interfaces supported by this configuration
-32. **Configuration Descriptor bConfigurationValue:** Value to use as an argument to select this configuration
-33. **Configuration Descriptor iConfiguration:** Index of the configuration string descriptor
-34. **Configuration Descriptor bmAttributes:** Configuration characteristics
-35. **Configuration Descriptor MaxPower:** Maximum power consumption
-36. **Interface Descriptor 0 bLength:** Length of the interface descriptor
-37. **Interface Descriptor 0 bDescriptorType:** Type of the interface descriptor
-38. **Interface Descriptor 0 bInterfaceNumber:** Number of this interface
-39. **Interface Descriptor 0 bAlternateSetting:** Value used to select this alternate setting
-40. **Interface Descriptor 0 bNumEndpoints:** Number of endpoints used by this interface
-41. **Interface Descriptor 0 bInterfaceClass:** Class code
-42. **Interface Descriptor 0 bInterfaceSubClass:** Subclass code
-43. **Interface Descriptor 0 bInterfaceProtocol:** Protocol code
-44. **Interface Descriptor 0 iInterface:** Index of the string descriptor
-45. **HID Descriptor 0 bLength:** Length of the HID descriptor
-46. **HID Descriptor 0 bDescriptorType:** Type of the HID descriptor
-47. **HID Descriptor 0 bcdHID:** HID Class Specification release
-48. **HID Descriptor 0 bCountryCode:** Country code of the hardware target
-49. **HID Descriptor 0 bNumDescriptors:** Number of HID class descriptors to follow
-50. **HID Descriptor 0 bDescriptorType0:** Type of HID class descriptor
-51. **HID Descriptor 0 wDescriptorLength:** Total length of the report descriptor
-52. **Endpoint Descriptor 0 bLength:** Length of the endpoint descriptor
-53. **Endpoint Descriptor 0 bDescriptorType:** Type of the endpoint descriptor
-54. **Endpoint Descriptor 0 bEndpointAddress:** Address of the endpoint
-55. **Endpoint Descriptor 0 bmAttributes:** Endpoint attributes
-56. **Endpoint Descriptor 0 wMaxPacketSize:** Maximum packet size this endpoint is capable of sending/receiving
-57. **Endpoint Descriptor 0 bInterval:** Interval for polling endpoint for data transfers
-58. **Interface Descriptor 1 bLength:** Length of the interface descriptor
-59. **Interface Descriptor 1 bDescriptorType:** Type of the interface descriptor
-60. **Interface Descriptor 1 bInterfaceNumber:** Number of this interface
-61. **Interface Descriptor 1 bAlternateSetting:** Value used to select this alternate setting
-62. **Interface Descriptor 1 bNumEndpoints:** Number of endpoints used by this interface
-63. **Interface Descriptor 1 bInterfaceClass:** Class code
-64. **Interface Descriptor 1 bInterfaceSubClass:** Subclass code
-65. **Interface Descriptor 1 bInterfaceProtocol:** Protocol code
-66. **Interface Descriptor 1 iInterface:** Index of the string descriptor
-67. **HID Descriptor 1 bLength:** Length of the HID descriptor
-68. **HID Descriptor 1 bDescriptorType:** Type of the HID descriptor
-69. **HID Descriptor 1 bcdHID:** HID Class Specification release
-70. **HID Descriptor 1 bCountryCode:** Country code of the hardware target
-71. **HID Descriptor 1 bNumDescriptors:** Number of HID class descriptors to follow
-72. **HID Descriptor 1 bDescriptorType0:** Type of HID class descriptor
-73. **HID Descriptor 1 wDescriptorLength:** Total length of the report descriptor
-74. **Endpoint Descriptor 1 bLength:** Length of the endpoint descriptor
-75. **Endpoint Descriptor 1 bDescriptorType:** Type of the endpoint descriptor
-76. **Endpoint Descriptor 1 bEndpointAddress:** Address of the endpoint
-77. **Endpoint Descriptor 1 bmAttributes:** Endpoint attributes
-78. **Endpoint Descriptor 1 wMaxPacketSize:** Maximum packet size this endpoint is capable of sending/receiving
-79. **Endpoint Descriptor 1 bInterval:** Interval for polling endpoint for data transfers
-80. **Print Current Values**
-81. **Delete Values Stored**
-82. **Exit and Save**
+### Enhanced Efficiency and Speed
 
-Please be sure to change the values to your own, as the provided default values will only be available for a limited time.
+- **DMA Implementation:** The updated code utilizes DMA (Direct Memory Access) for UART data reception. This significantly reduces CPU overhead and increases the efficiency of data handling.
+- **Interrupt Service Routines (ISR):** DMA interrupts are used to handle incoming data, which allows for non-blocking serial communication and reduces latency.
+- **Improved Command Processing with DMA Buffers:** The code now leverages DMA buffers for command processing. This enhances efficiency compared to the standard Arduino method of using regular buffers by offloading memory access operations from the CPU to the DMA controller, reducing the average time to process each command.
 
-Enjoy!
+### Performance Metrics
+
+- **Polling Rate:** Increased from 500Hz to 1000Hz, doubling the frequency at which the device polls for data and improving responsiveness.
+- **Command Processing Time:** The total time to process each command, from the ISR to the `Mouse.move` command, is now consistently under 700 microseconds on average. This is a significant improvement over the previous implementation.
+- **Stable 4Mbps UART Link:** The communication between the two ESP32-S3 dev kits is now established with a stable 4Mbps UART link, enhancing data transfer rates and reducing latency.
+
+### Stability and Error Handling
+
+- **Graceful Handling of Unknown Commands:** The updated code includes detailed error messages for unknown commands and potential issues, ensuring that the system remains stable and providing useful feedback for debugging.
+
+### Example Timing Improvements
+
+- The time taken to process a command has been benchmarked, showing results such as:
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Board1.jpg" width="30%">
+
+These results demonstrate the efficiency and speed improvements achieved with the new code.
+
+## Summary
+
+The transition to version 2 of the project has brought significant improvements in efficiency and performance. By utilizing DMA and ISRs for serial communication, the system now handles commands much faster, with average command processing times reduced to under 700 microseconds. These updates have enhanced the overall responsiveness and stability of the project, making it a more robust solution for USB Host and Device interfacing.
