@@ -1,4 +1,4 @@
-#V2.1 Bug fix 
+# V2.1 Bug fix 
 
 
 # ESP32-S3 Dual Dev Kit Project
