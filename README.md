@@ -1,5 +1,17 @@
 # V2.1 Bug fix 
 
+- **Improved Menu Handling**: Implemented state logic for menu management.
+- **Simultaneous Menu and Mouse Operation**: Enabled simultaneous combined usage of menu and mouse commands without blocking each other.
+
+# TODO:
+- **Passive Descriptor Parsing**: Implement passive parsing of HID descriptors to obtain necessary information.
+- **Mouse Control Parsing**: Use the parsed HID descriptors to determine the order in the USB transfer buffer for mouse buttons and X, Y.
+- **WebUI/BLE GATT API for Management**: Develop a WebUI/BLE GATT, API to facilitate device management.
+
+
+
+
+
 
 # ESP32-S3 Dual Dev Kit Project
 
