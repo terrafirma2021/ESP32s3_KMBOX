@@ -192,5 +192,9 @@ The transition to version 2 of the project has brought significant improvements 
 
 ## PCB Pinout
 
-As this is a stacked config, all pins marked will be connected directly to both ESP. The grounds are shared soo the extra gnd connections just adds board support. Avoid the use of the 3.3v as we will be powering the devices via the LDO's, the use of the  IN/OUT pad on the top will provide power to the bottom esp, this will ensure that both esps power at the same time when using the top esp, **this is one direction only!** Top--->Bottom.
+Since this is a stacked configuration, all marked pins will be connected directly to both ESP modules. The grounds are shared, so the additional ground connections only enhance board support. Avoid using the 3.3V pin, as we will power the devices via the LDOs.
+
+The use of the IN/OUT pad on the top will provide power to the bottom ESP, ensuring that both ESP modules power up simultaneously when using the top ESP.
+
+Note: This power flow is unidirectional: Top ---> Bottom.
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/pcb_design.png">
