@@ -66,6 +66,87 @@ To open the configuration menu, send the command `menu` through the COM port (Bo
 
 **Note:** If all values are removed, the device will revert to default settings to avoid blank values.
 
+## Supported descriptors:
+Supported descriptors:
+
+- VID
+- PID
+- USB Version
+- Firmware Version
+- Product Name
+- Manufacturer Name
+- Serial Number
+- USB Power
+- USB Attributes
+- Descriptor4 *Extra*
+- Device Descriptor bLength
+- Device Descriptor bDescriptorType
+- Device Descriptor bcdUSB
+- Device Descriptor bDeviceClass
+- Device Descriptor bDeviceSubClass
+- Device Descriptor bDeviceProtocol
+- Device Descriptor bMaxPacketSize0
+- Device Descriptor idVendor
+- Device Descriptor idProduct
+- Device Descriptor bcdDevice
+- Device Descriptor iManufacturer
+- Device Descriptor iProduct
+- Device Descriptor iSerialNumber
+- Device Descriptor bNumConfigurations
+- Configuration Descriptor bLength
+- Configuration Descriptor bDescriptorType
+- Configuration Descriptor wTotalLength
+- Configuration Descriptor bNumInterfaces
+- Configuration Descriptor bConfigurationValue
+- Configuration Descriptor iConfiguration
+- Configuration Descriptor bmAttributes
+- Configuration Descriptor MaxPower
+- Interface Descriptor 0 bLength
+- Interface Descriptor 0 bDescriptorType
+- Interface Descriptor 0 bInterfaceNumber
+- Interface Descriptor 0 bAlternateSetting
+- Interface Descriptor 0 bNumEndpoints
+- Interface Descriptor 0 bInterfaceClass
+- Interface Descriptor 0 bInterfaceSubClass
+- Interface Descriptor 0 bInterfaceProtocol
+- Interface Descriptor 0 iInterface
+- HID Descriptor 0 bLength
+- HID Descriptor 0 bDescriptorType
+- HID Descriptor 0 bcdHID
+- HID Descriptor 0 bCountryCode
+- HID Descriptor 0 bNumDescriptors
+- HID Descriptor 0 bDescriptorType0
+- HID Descriptor 0 wDescriptorLength
+- Endpoint Descriptor 0 bLength
+- Endpoint Descriptor 0 bDescriptorType
+- Endpoint Descriptor 0 bEndpointAddress
+- Endpoint Descriptor 0 bmAttributes
+- Endpoint Descriptor 0 wMaxPacketSize
+- Endpoint Descriptor 0 bInterval
+- Interface Descriptor 1 bLength
+- Interface Descriptor 1 bDescriptorType
+- Interface Descriptor 1 bInterfaceNumber
+- Interface Descriptor 1 bAlternateSetting
+- Interface Descriptor 1 bNumEndpoints
+- Interface Descriptor 1 bInterfaceClass
+- Interface Descriptor 1 bInterfaceSubClass
+- Interface Descriptor 1 bInterfaceProtocol
+- Interface Descriptor 1 iInterface
+- HID Descriptor 1 bLength
+- HID Descriptor 1 bDescriptorType
+- HID Descriptor 1 bcdHID
+- HID Descriptor 1 bCountryCode
+- HID Descriptor 1 bNumDescriptors
+- HID Descriptor 1 bDescriptorType0
+- HID Descriptor 1 wDescriptorLength
+- Endpoint Descriptor 1 bLength
+- Endpoint Descriptor 1 bDescriptorType
+- Endpoint Descriptor 1 bEndpointAddress
+- Endpoint Descriptor 1 bmAttributes
+- Endpoint Descriptor 1 wMaxPacketSize
+- Endpoint Descriptor 1 bInterval
+
+
 ## Updates and Improvements in V2
 
 ### Enhanced Efficiency and Speed
