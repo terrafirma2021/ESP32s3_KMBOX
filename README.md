@@ -1,14 +1,21 @@
-# V2.1 Bug fix 
+# V2.2 Update 
 
 - **Improved Menu Handling**: Implemented state logic for menu management.
 - **Simultaneous Menu and Mouse Operation**: Enabled simultaneous combined usage of menu and mouse commands without blocking each other.
+- **Mouse Control Parsing**: Now supports HID descriptors to determine the order in the USB transfer buffer for mouse buttons and X, Y.
+- **Implemented USB Power Saving**: USB_B_REQUEST_SET_FEATURE Enabled for usb wakeup support, (timeout after 10 seconds).
 
 # TODO:
 - **Passive Descriptor Parsing**: Implement passive parsing of HID descriptors to obtain necessary information.
-- **Mouse Control Parsing**: Use the parsed HID descriptors to determine the order in the USB transfer buffer for mouse buttons and X, Y.
 - **WebUI/BLE GATT API for Management**: Develop a WebUI/BLE GATT, API to facilitate device management.
 
+# Known bugs
+- **USB Desciptors: partially broken after menu migration to state logic, will solve with next update. 
+- ** UART ramdomly Hangs: This happens even with kmbox (Same IDF underpins), temp work around by disabling U1 interupts flushing and re-enabling. I will create a test code and submit a bug report to Expressif asap.
 
+# Bug fixes:
+- fixed issue where some mouse may not report 0x81 endpoint correctly. Causing code to block mouse.
+- Fixed USB Wireless mouse battery drain.
 
 
 
@@ -45,6 +52,7 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 
 - **YD-ESP32-S3 N16R8**
   - [Amazon](https://www.amazon.co.uk/dp/B0CQNBJSCP)
+  - NOTE: *** Please ensure you buy a N16R8 board, i will create a boards.json for you if not, but it will save your time if you get the right device, 
 
 ## Additional Requirements
 
