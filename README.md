@@ -198,3 +198,8 @@ Note: This power flow is unidirectional: Top ---> Bottom.
 
 ## Thanks:
 - [thecloneop](https://discord.gg/UqzcRTVpky): Bug tester
+
+## NOTE: 
+- When installing python dont forget to add to path!
+- Your Version number may differ from photo!
+<img src="https://miro.medium.com/v2/resize:fit:1344/0*7nOyowsPsGI19pZT.png">
