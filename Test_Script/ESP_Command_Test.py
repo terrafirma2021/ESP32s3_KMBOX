@@ -16,9 +16,16 @@ except ImportError:
     import serial
     import serial.tools.list_ports
 
+# Check and install keyboard if not already installed
+try:
+    import keyboard
+except ImportError:
+    print("keyboard module not found, installing...")
+    install("keyboard")
+    import keyboard
+
 import threading
 import time
-import keyboard
 
 # Constants for command mappings
 MOVE_COMMAND = "km.move"
@@ -43,14 +50,21 @@ def list_com_ports():
 
 # Function to select COM port
 def select_com_port():
-    ports = list_com_ports()
-    if not ports:
-        print("No COM ports found.")
-        return None
-    for i, port in enumerate(ports):
-        print(f"{i}: {port}")
-    port_index = int(input("Select COM port by number: "))
-    return ports[port_index]
+    while True:
+        ports = list_com_ports()
+        if not ports:
+            print("No COM ports found.")
+            input("Press Enter to quit.")
+            return None
+        for i, port in enumerate(ports):
+            print(f"{i}: {port}")
+        try:
+            port_index = int(input("Select COM port by number: "))
+            if port_index < 0 or port_index >= len(ports):
+                raise ValueError("Invalid selection")
+            return ports[port_index]
+        except ValueError as e:
+            print(f"Error: {e}. Please try again.")
 
 # Function to send command to the selected COM port
 def send_command(ser, command):
@@ -73,7 +87,7 @@ def read_from_port(ser):
 def main():
     print("Listing available COM ports...")
     com_port = select_com_port()
-    if (com_port is None):
+    if com_port is None:
         print("No COM port selected, exiting.")
         return
 
@@ -82,6 +96,7 @@ def main():
         ser = serial.Serial(com_port, 115200, timeout=1)
     except serial.SerialException as e:
         print(f"Failed to open COM port: {e}")
+        input("Press Enter to quit.")
         return
     print(f"COM port {com_port} opened.")
 
