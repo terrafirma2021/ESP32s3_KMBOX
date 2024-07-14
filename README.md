@@ -1,4 +1,4 @@
-# V2.2 Update 
+# V2.2.1 Update Bugfix
 
 - **Improved Menu Handling**: Implemented state logic for menu management.
 - **Simultaneous Menu and Mouse Operation**: Enabled simultaneous combined usage of menu and mouse commands without blocking each other.
@@ -17,6 +17,7 @@
 # Bug fixes:
 - fixed issue where some mouse may not report 0x81 endpoint correctly. Causing code to block mouse.
 - Fixed USB Wireless mouse battery drain.
+- now parses 12 bit x,y correctly. Report ID alignment 
 
 # ESP32-S3 Dual Dev Kit Project
 
