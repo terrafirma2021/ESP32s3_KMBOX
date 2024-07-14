@@ -17,7 +17,8 @@
 # Bug fixes:
 - fixed issue where some mouse may not report 0x81 endpoint correctly. Causing code to block mouse.
 - Fixed USB Wireless mouse battery drain.
-- now parses 12 bit x,y correctly. Report ID alignment 
+- Correctly parses: 12 bit X,Y 
+- Report ID alignment 
 
 # ESP32-S3 Dual Dev Kit Project
 
