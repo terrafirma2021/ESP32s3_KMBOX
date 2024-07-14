@@ -13,12 +13,10 @@
 - **USB Desciptors: partially broken after menu migration to state logic, will solve with next update. 
 - ** UART ramdomly Hangs: This happens even with kmbox (Same IDF underpins), temp work around by disabling U1 interupts flushing and re-enabling. I will create a test code and submit a bug report to Expressif asap.
 
+
 # Bug fixes:
 - fixed issue where some mouse may not report 0x81 endpoint correctly. Causing code to block mouse.
 - Fixed USB Wireless mouse battery drain.
-
-
-
 
 # ESP32-S3 Dual Dev Kit Project
 
