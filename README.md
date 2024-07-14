@@ -30,18 +30,6 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 - **ESP-A (Top):** Handles USB Device mode via the left USB C Connector.
 - **ESP-A (Top):** replicates KMBOX B Pro commands via the right USB C connector.
 
-## Notes:
-- **Buttons, X, Y, wheel may not match your mouse, enable debug in PIO and adjust the transfer buffer index in the EspUsbHost.cpp (Bottom ESP)**
-
-    ```cpp
-    Void EspUsbHost::_onReceive(usb_transfer_t *transfer) {
-        report.buttons = transfer->data_buffer[0];
-        report.x = (uint8_t)transfer->data_buffer[2];
-        report.y = (uint8_t)transfer->data_buffer[4];
-        report.wheel = (uint8_t)transfer->data_buffer[6];
-    }
-    ```
-
 ## Images
 
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Board1.jpg" width="80%">
