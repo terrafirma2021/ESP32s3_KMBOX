@@ -1,5 +1,21 @@
-import serial
-import serial.tools.list_ports
+import os
+import sys
+import subprocess
+
+# Function to install required packages
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Check and install pyserial if not already installed
+try:
+    import serial
+    import serial.tools.list_ports
+except ImportError:
+    print("pyserial not found, installing...")
+    install("pyserial")
+    import serial
+    import serial.tools.list_ports
+
 import threading
 import time
 import keyboard
@@ -57,7 +73,7 @@ def read_from_port(ser):
 def main():
     print("Listing available COM ports...")
     com_port = select_com_port()
-    if com_port is None:
+    if (com_port is None):
         print("No COM port selected, exiting.")
         return
 
@@ -97,6 +113,9 @@ def main():
         | Wheel:                                |
         |   N - Wheel Up                        |
         |   M - Wheel Down                      |
+        |                                       |
+        | Position:                             |
+        |   , - Get Position                    |
         +---------------------------------------+
         """)
 
@@ -124,6 +143,8 @@ def main():
                     send_command(ser, f"{WHEEL_COMMAND}(1)")
                 elif event.name == 'm':
                     send_command(ser, f"{WHEEL_COMMAND}(-1)")
+                elif event.name == ',':
+                    send_command(ser, GETPOS_COMMAND)
                 print(f"Key pressed: {event.name}")  # Debug statement
             elif event.event_type == 'up':
                 if event.name == 'z':
