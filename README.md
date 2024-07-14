@@ -194,3 +194,7 @@ The use of the IN/OUT pad on the top will provide power to the bottom ESP, ensur
 
 Note: This power flow is unidirectional: Top ---> Bottom.
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/pcb_design.png">
+
+
+## Thanks:
+- [thecloneop](https://discord.gg/UqzcRTVpky): Bug tester
