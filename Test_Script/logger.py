@@ -1,6 +1,14 @@
-import serial
 import os
+import sys
+import subprocess
 import threading
+
+# Ensure pyserial is installed
+try:
+    import serial
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pyserial"])
+    import serial
 
 # Function to get the list of available COM ports
 def get_com_ports():
