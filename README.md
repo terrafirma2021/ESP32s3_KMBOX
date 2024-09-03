@@ -11,6 +11,13 @@ to:
 board = Devkit; MAKCM
 
 
+BOARD Config;
+
+TOP = LEFT (Device)
+
+Bottom = RIGHT (Host Mouse)
+
+
 
 
 # ESP32-S3 Dual Dev Kit Project
