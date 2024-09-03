@@ -13,9 +13,9 @@ board = Devkit; MAKCM
 
 BOARD Config;
 
-TOP = LEFT (Device)
+TOP = LEFT (Device_Mouse_Left)
 
-Bottom = RIGHT (Host Mouse)
+Bottom = RIGHT (HID_Mouse_Right)
 
 
 
