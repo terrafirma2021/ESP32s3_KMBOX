@@ -2,20 +2,11 @@
 
 All code updates will now be found on my repo: [MAKCM GitHub Repository](https://github.com/terrafirma2021/MAKCM).
 
-To change the compiler from MAKCM to Devkit, inside the PlatformIO configuration, change the board config from:
+Names for people who are using MAKCM bins:
 
-board = MAKCM; Devkit
+Top = LEFT_*.bin (DEVICE)
 
-to:
-
-board = Devkit; MAKCM
-
-
-BOARD Config;
-
-TOP = LEFT (Device_Mouse_Left)
-
-Bottom = RIGHT (HID_Mouse_Right)
+Bottom = RIGHT_*.bin (HOST)
 
 
 
@@ -31,10 +22,28 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 - **ESP-A (Top):** replicates KMBOX B Pro commands via the right USB C connector.
 
 ## Images
+Finished Design:
 
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/TOP_Done.jpg" width="80%">
-<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/case.jpg" width="80%">
-<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Test_Script_Photo.JPG" width="80%">
+
+
+
+
+Bottom ESP Soldered pins (USB-OTG pad must be soldered!) :
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Bottom2.jpg" width="80%">
+
+
+
+Top ESP Soldered pins:
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Top1.jpg" width="80%">
+
+
+Side view of soldered pins:
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Side1.jpg" width="80%">
+
 
 ## Boards Used
 
@@ -70,13 +79,6 @@ The two ESP32-S3 dev kits communicate using UART, allowing seamless data transfe
 
 
 
-### Example Timing Improvements
-
-- The time taken to process a command has been benchmarked, showing solid results:
-<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Speed.JPG" width="30%">
-
-
-These results demonstrate the efficiency and speed improvements achieved with the new code.
 
 ## Summary
 
@@ -89,12 +91,13 @@ Since this is a stacked configuration, all marked pins will be connected directl
 
 The use of the IN/OUT pad on the top will provide power to the bottom ESP, ensuring that both ESP modules power up simultaneously when using the top ESP.
 
-Note: This power flow is unidirectional: Top ---> Bottom.
-<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/pcb_design.png">
+Note: This power flow is -Not Unidirectional-! its direction of VCC is : Top ---> Bottom.
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Diagram.png">
 
 
 ## Thanks:
 - [thecloneop](https://discord.gg/UqzcRTVpky): Bug tester
+- Many more, will add you all when i get onto the list;
 
 ## NOTE: 
 - When installing python dont forget to add to path!
