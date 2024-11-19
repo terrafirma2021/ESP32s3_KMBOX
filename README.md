@@ -32,7 +32,7 @@ This project utilizes two ESP32-S3 dev kits in a stacked configuration (one on t
 
 ## Images
 
-<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Board1.jpg" width="80%">
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/TOP_Done.jpg" width="80%">
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/case.jpg" width="80%">
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/Photos/Test_Script_Photo.JPG" width="80%">
 
