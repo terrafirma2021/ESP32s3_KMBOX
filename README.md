@@ -100,6 +100,8 @@ Note: This power flow is -Not Unidirectional-! its direction of VCC is : Top ---
 - Many more, will add you all when i get onto the list;
 
 ## NOTE: 
-- When installing python dont forget to add to path!
-- Your Version number may differ from photo!
-<img src="https://miro.medium.com/v2/resize:fit:1344/0*7nOyowsPsGI19pZT.png">
+- You will need 1 x USB-C OTG cable, (the adaptors are too wide and will block the other port!)
+- 2x USB-C to A cables
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/USB%20OTG.jpg" width="50%">
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/USB%20C%20A.jpg" width="50%">
