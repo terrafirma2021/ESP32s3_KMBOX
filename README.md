@@ -2,7 +2,7 @@
 
 All code updates will now be found on my repo: [MAKCU GitHub Repository](https://github.com/terrafirma2021/MAKCM).
 
-Names for people who are using MAKCM bins:
+Names for people who are using MAKCU bins:
 
 Top = LEFT_*.bin (DEVICE)
 
