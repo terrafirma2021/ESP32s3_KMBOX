@@ -105,3 +105,20 @@ Note: This power flow is -Not Unidirectional-! its direction of VCC is : Top ---
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/USB%20OTG.jpg" width="50%">
 
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/USB%20C%20A.jpg" width="50%">
+
+
+## Users Builds
+
+Community submissions and custom builds by other makers!
+
+## Users Builds
+
+Community submissions and custom builds by other makers!
+
+<strong>Photo credit:</strong> wod<br>
+<strong>Discord user ID:</strong> energetic_papaya_53264
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Diy_build.JPG" width="60%">
+
+
+
