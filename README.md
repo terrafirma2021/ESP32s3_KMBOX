@@ -1,6 +1,6 @@
-# Project has now been merged with the MAKCM project
+# Project has now been merged with the MAKCU project
 
-All code updates will now be found on my repo: [MAKCM GitHub Repository](https://github.com/terrafirma2021/MAKCM).
+All code updates will now be found on my repo: [MAKCU GitHub Repository](https://github.com/terrafirma2021/MAKCM).
 
 Names for people who are using MAKCM bins:
 
