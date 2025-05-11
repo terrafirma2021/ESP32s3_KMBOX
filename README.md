@@ -107,9 +107,6 @@ Note: This power flow is -Not Unidirectional-! its direction of VCC is : Top ---
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/USB%20C%20A.jpg" width="50%">
 
 
-## Users Builds
-
-Community submissions and custom builds by other makers!
 
 ## Users Builds
 
