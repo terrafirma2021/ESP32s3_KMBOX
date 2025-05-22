@@ -117,5 +117,13 @@ Community submissions and custom builds by other makers!
 
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Diy_build.JPG" width="60%">
 
+<strong>Photo credit:</strong> 清欢科技工作室<br>
+<strong>Discord user ID:</strong> lesliecheung
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/User_Build2.jpg" width="60%">
+
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/User_build1.jpg" width="60%">
+
+
 
 
