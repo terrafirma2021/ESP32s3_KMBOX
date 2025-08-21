@@ -94,6 +94,13 @@ The use of the IN/OUT pad on the top will provide power to the bottom ESP, ensur
 Note: This power flow is -Not Unidirectional-! its direction of VCC is : Top ---> Bottom.
 <img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/Diagram.png">
 
+## Cut traces on board!
+
+Be aware if you do not cut the traces on the board, the top devkit will reset every time you open the com port .....
+
+Note: you will have to then flash the top devkit from the left usb port (hold boot button and then connect usb cable to left side) !This is only for the top esp.
+<img src="https://github.com/terrafirma2021/ESP32s3_KMBOX/blob/main/New_Photos/cut.png" width="50%">
+
 
 ## Thanks:
 - [thecloneop](https://discord.gg/UqzcRTVpky): Bug tester
